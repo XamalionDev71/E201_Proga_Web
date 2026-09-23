@@ -4,6 +4,7 @@
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisClaro: #dfe9f3;
 }
 
 html {
@@ -18,6 +19,8 @@ html {
 body {
     font-size: 16px;
     font-family: "Roboto", sans-serif;
+    /*Agregamos el degradado*/
+    background-image: linear-gradient(to top,var(--grisClaro) 0%, var(--blanco) 100%);
 }
 
 h1{
@@ -84,7 +87,7 @@ h1.titulo {
     background-color: var(--secundario);
 }
 
-@media(min-width:480px){
+@media(min-width:768px){
     .nav-principal{
         flex-direction: row;
         justify-content: space-between;
@@ -97,6 +100,7 @@ h1.titulo {
     background-size: cover;
     height: 45rem;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .contenido-imagen{
@@ -114,4 +118,66 @@ h1.titulo {
 .ubicacion{
     display: flex;
     align-items: flex-end;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/*Servicios*/
+@media(min-width:768px){
+    .servicios {
+        display: grid;
+        /*plantilla del grid*/
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2rem;
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3{
+    color: var(--secundario);
+    font-weight: 500;
+}
+
+.servicio p{
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    margin: 3rem auto 0;
+    width: 90%;
+    text-align: center;
+    display: block;
+    width: fit-content;
+}
+
+.sombra {
+    -webkit-box-shadow: 19px 19px 11px -7px rgba(32,36,42,0.77);
+    -moz-box-shadow: 19px 19px 11px -7px rgba(32,36,42,0.77);
+    box-shadow: 19px 19px 11px -7px rgba(32,36,42,0.77);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
 }
